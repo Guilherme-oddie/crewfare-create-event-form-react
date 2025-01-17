@@ -45,12 +45,32 @@
 
 }
 
+.opacity-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  width: 38px;
+  height: 38px;
+  background-size: cover;
+
+}
+
 .nav-button:nth-child(1) {
   background-image: url('../../../stories/assets/arrow-left.svg');
 }
 
 .nav-button:nth-child(2) {
   background-image: url('../../../stories/assets/arrow-right.svg');
+}
+
+.opacity-button:nth-child(1) {
+  background-image: url('../../../stories/assets/arrow-left-gray.svg');
+}
+
+.opacity-button:nth-child(2) {
+  background-image: url('../../../stories/assets/arrow-right-gray.svg');
 }
 
 .nav-button:hover {

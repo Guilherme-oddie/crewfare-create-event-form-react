@@ -10,8 +10,9 @@ interface PanelProps {
   children: React.ReactNode;
   buttonTitle: string;
   fullwidth?: boolean;
+  currentStep?: number;
 }
-const Panel: React.FC<PanelProps> = ({ title, fullwidth, onSave, onNext, onPrev, children, buttonTitle }) => {
+const Panel: React.FC<PanelProps> = ({ title, fullwidth, onSave, onNext, onPrev, children, buttonTitle, currentStep }) => {
   return (
     <div className="panel open" style={{ background: '#1d1d1f', width: fullwidth ? "100%" : "" }}>
       <div className="panel-header">
@@ -21,8 +22,16 @@ const Panel: React.FC<PanelProps> = ({ title, fullwidth, onSave, onNext, onPrev,
         {children}
       </div>
       <div className="panel-controls">
-        <button onClick={onPrev} type="button" className="nav-button"></button>
-        <button onClick={onNext} type="button" className="nav-button"></button>
+        <button
+          onClick={onPrev}
+          type="button"
+          className={currentStep === 1 ? "opacity-button" : "nav-button"}
+        />
+        <button
+          onClick={onNext}
+          type="button"
+          className={currentStep === 3 ? "opacity-button" : "nav-button"}
+        />
       </div>
       <div className="panel-content">
         <Button label={buttonTitle} onChange={onSave} size='small' type='submit' />
