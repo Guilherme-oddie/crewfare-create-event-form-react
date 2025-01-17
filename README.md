@@ -83,6 +83,7 @@ crewfare-create-event-form
 ├── package.json
 ├── tsconfig.json
 └── README.md
+
 Getting Started
 Prerequisites
 Node.js (v14+ recommended)
@@ -90,18 +91,18 @@ npm or Yarn installed globally
 Installation
 Clone the repository:
 bash
-Copiar
+
 git clone https://github.com/OddieMaster/crewfare-create-event-form.git
 Install the dependencies:
 bash
-Copiar
+
 cd crewfare-create-event-form
 npm install
 # or
 yarn
 Running the App
 bash
-Copiar
+
 npm start
 # or
 yarn start
