@@ -1,45 +1,62 @@
 import { Meta } from "@storybook/blocks";
 
-export const RightArrow = () => <svg 
-    viewBox="0 0 14 14" 
-    width="8px" 
-    height="14px" 
-    style={{ 
-      marginLeft: '4px',
-      display: 'inline-block',
-      shapeRendering: 'inherit',
-      verticalAlign: 'middle',
-      fill: 'currentColor',
-      'path fill': 'currentColor'
-    }}
->
-  <path d="m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z" />
-</svg>
-
 <Meta title="Welcome" />
-
 <div className="sb-container">
-  <div className='sb-section-title'>
-    # Welcome to Crewfare's storybook
-
-    Because Storybook works separately from your app, you'll need to configure it for your specific stack and setup. Below, explore guides for configuring Storybook with popular frameworks and tools. If you get stuck, learn how you can ask for help from our community.
+  <div className="sb-section-title">
+    <h1 style={{ marginBottom: '16px' }}>Welcome to Crewfare's Storybook</h1>
+    <p>
+      This Storybook highlights our custom React components organized using atomic design principles:
+      from essential <strong>atoms</strong> (such as <em>Button</em>, <em>Checkbox</em>, or <em>InputText</em>)
+      to composite <strong>molecules</strong> (like <em>Card</em> or <em>EventDateRange</em>) and full-fledged
+      <strong> organisms</strong> (including <em>BasicInformationForm</em> and <em>DetailsForm</em>).
+      Finally, we combine it all in higher-level <strong>templates</strong>, like the <em>EventForm</em>, 
+      demonstrating how these building blocks fit together.
+    </p>
+    <p>
+      Explore each story to see how these components can help you build a cohesive, 
+      flexible UI. If you get stuck, remember that the Storybook community is always ready to help.
+    </p>
   </div>
- </div>
+</div>
+
 <style>
   {`
-  .sb-container {
-    margin-bottom: 48px;
-  }
+    .sb-container {
+      margin-bottom: 48px;
+      background-color: #1d1d1f;
+      padding: 24px;
+      border-radius: 4px;
+    }
 
-  .sb-section {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-  }
+    .sb-section-title h1,
+    .sb-section-title p {
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.5;
+    }
 
-  img {
-    object-fit: cover;
-  }
+    .sb-section-title p {
+      margin-top: 16px;
+    }
+
+    .sb-section-title strong {
+      color: #ffffff;
+    }
+
+    .sb-section-title em {
+      font-style: normal;
+      color: #f0f0f0;
+    }
+
+    .sb-section {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    img {
+      object-fit: cover;
+    }
   `}
 </style>
