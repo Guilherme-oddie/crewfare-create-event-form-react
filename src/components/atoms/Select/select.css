@@ -1,0 +1,43 @@
+.custom-select {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+}
+
+.custom-select select {
+  height: 44px;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #2d2d2d;
+  font-family: "Poppins";
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 10px;
+  padding-right: 40px;
+
+  width: 100%;
+  cursor: pointer;
+}
+
+.custom-select select:focus {
+  outline: none;
+  border-color: #666;
+}
+
+.custom-select .arrow-down {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 24px;
+  height: 24px;
+  background-image: url('../../../stories/assets/arrowdown.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}

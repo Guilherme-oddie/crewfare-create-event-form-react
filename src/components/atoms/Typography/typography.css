@@ -1,0 +1,21 @@
+.typography {
+    font-family: 'Poppins';
+    margin-bottom: 12px;
+}
+
+.typography.default {
+    font-size: 14px;
+    color: #F9F9F9;
+}
+
+.typography.header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #F9F9F9;
+}
+
+.typography.title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #F9F9F9;
+}
