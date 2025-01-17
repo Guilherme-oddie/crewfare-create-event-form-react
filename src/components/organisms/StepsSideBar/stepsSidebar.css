@@ -1,0 +1,69 @@
+.steps-sidebar-container {
+  min-height: 100vh;
+  background-color: #141416;
+  padding: 20px;
+  font-family: 'Poppins';
+  width: 100%;
+}
+
+.steps-sidebar-title {
+  color: #fff;
+  font-size: 24px;
+  font-family: 'Poppins';
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.steps-sidebar-list {
+  list-style: none;
+  margin: 0;
+  padding: 20px 0 0 0;
+}
+
+.steps-sidebar-item {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.steps-sidebar-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #2f2f31;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  font-weight: bold;
+  color: #fff;
+  font-family: 'Poppins';
+}
+
+.steps-sidebar-label {
+  font-size: 0.95rem;
+  color: #bbb;
+  font-family: 'Poppins';
+}
+
+.steps-sidebar-item--active {
+  border-color: #3a3a3a;
+  background-color: #1D1D1F;
+}
+
+.steps-sidebar-item--active .steps-sidebar-circle {
+  background-color: #6C63FF;
+}
+
+.steps-sidebar-item--active .steps-sidebar-label {
+  color: #fff;
+}
+
+.steps-sidebar-item--completed .steps-sidebar-circle {
+  background-color: #42db83;
+  color: #000;
+}
