@@ -1,0 +1,50 @@
+.event-toggle-container {
+  position: relative;
+  display: inline-block;
+  width: 288px;
+  height: 40px;
+  background: #211d35;
+  color: #4323FF;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #4323FF66;
+}
+
+.event-toggle-switch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #4323FF;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+.event-toggle-btn-label {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins';
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  text-underline-position: "from-font";
+  text-decoration-skip-ink: none;
+}
+
+.event-toggle-btn-label--enable {
+  left: 0;
+}
+
+.event-toggle-btn-label--disable {
+  left: 50%;
+}
