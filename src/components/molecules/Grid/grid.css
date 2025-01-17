@@ -1,0 +1,9 @@
+.grid-container {
+  display: grid;
+}
+
+.grid-item {
+  display: grid;
+  width: 100%;
+  box-sizing: border-box;
+}
