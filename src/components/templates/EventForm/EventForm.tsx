@@ -146,6 +146,7 @@ const EventForm: React.FC = () => {
             <StepsSidebar
               title="Create Event"
               steps={steps}
+              errors={errors}
             />
           </Grid>
           <Grid item size={9} style={{ display: "flex", alignItems: "start", justifyContent: "start" }}>
@@ -157,6 +158,7 @@ const EventForm: React.FC = () => {
               buttonTitle={"Save"}
               fullwidth={true}
               currentStep={currentStep}
+              errors={errors}
             >
               {renderStepContent()}
             </Panel>
