@@ -31,7 +31,7 @@
   .upload-icon {
     width: 40px;
     height: 40px;
-    background-color: #4caf50;
+    background-color: #4FF6B1;
     mask: url('../../../stories/assets/archive-upload.svg') no-repeat center;
     mask-size: contain;
   }

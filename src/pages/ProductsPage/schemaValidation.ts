@@ -31,7 +31,6 @@ export const formDataValidationSchema = {
     .string()
     .when('overlayTextOnBanner', (overlayTextOnBanner, schema) => {
       if (overlayTextOnBanner[0]) {
-        console.log("Entrou")
         return schema.required('Please, enter the text for the banner.');
       }
       return schema.notRequired()
