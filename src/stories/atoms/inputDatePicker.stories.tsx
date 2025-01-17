@@ -2,7 +2,6 @@ import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import InputDatePicker, { InputDatePickerProps } from "../../components/atoms/InputDatePicker/InputDatePicker";
 
-
 export default {
   title: "Atom/InputDatePicker",
   component: InputDatePicker,
@@ -14,4 +13,11 @@ export const Default = Template.bind({});
 Default.args = {
   onDateChange: (startDate, endDate) =>
     console.log("Start Date:", startDate, "End Date:", endDate),
+  value: {
+    startDate: null,
+    endDate: null,
+  },
+  placeholder: "Select a date range",
+  hasError: false,
+  errorMessage: "",
 };
