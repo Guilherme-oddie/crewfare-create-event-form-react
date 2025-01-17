@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hookform/resolvers": "^3.10.0",
     "@types/react-dom": "^19.0.3",
     "cra-template-typescript": "1.2.0",
     "react": "^19.0.0",
+    "react-datepicker": "^7.6.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.1",
-    "react-scripts": "5.0.1"
+    "react-hook-form": "^7.54.2",
+    "react-scripts": "5.0.1",
+    "yup": "^1.6.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -40,9 +43,9 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "@chromatic-com/storybook": "^3.2.3",
+    "@hookform/devtools": "^4.3.3",
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/addon-interactions": "^8.4.7",
-    "@storybook/addon-onboarding": "^8.4.7",
     "@storybook/blocks": "^8.4.7",
     "@storybook/preset-create-react-app": "^8.4.7",
     "@storybook/react": "^8.4.7",
