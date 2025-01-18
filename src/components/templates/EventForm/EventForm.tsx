@@ -94,8 +94,6 @@ const EventForm: React.FC = () => {
               : step
         )
       );
-    } else {
-      handleSubmit(onSubmit)();
     }
   };
 
