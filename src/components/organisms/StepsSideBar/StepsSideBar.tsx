@@ -106,7 +106,7 @@ export const StepsSidebar: React.FC<StepsSidebarProps> = ({
                 <img
                   src={alertIcon}
                   alt="alert-icon"
-                  style={{ margin: '10px' }}
+                  style={{ marginLeft: '10px' }}
                 />
               )}
             </li>

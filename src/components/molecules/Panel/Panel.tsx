@@ -87,16 +87,16 @@ function doesStepHaveErrors(stepNumber: number | undefined, errors: FieldErrors<
   return fieldsToCheck.some((fieldPath) => !!get(errors, fieldPath));
 }
 
-const Panel: React.FC<PanelProps> = ({ 
-  title, 
-  fullwidth, 
-  onSave, 
-  onNext, 
-  onPrev, 
-  children, 
-  buttonTitle, 
-  currentStep, 
-  errors 
+const Panel: React.FC<PanelProps> = ({
+  title,
+  fullwidth,
+  onSave,
+  onNext,
+  onPrev,
+  children,
+  buttonTitle,
+  currentStep,
+  errors
 }) => {
   const hasError = doesStepHaveErrors(currentStep, errors);
 
@@ -109,7 +109,7 @@ const Panel: React.FC<PanelProps> = ({
             <img
               src={alertIcon}
               alt="alert-icon"
-              style={{ marginLeft: 10 }}
+              className='alert-icon'
             />
           )}
         </div>

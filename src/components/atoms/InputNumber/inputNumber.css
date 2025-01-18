@@ -5,7 +5,6 @@
 }
 
 .input-number {
-  box-sizing: border-box;
   display: flex;
   align-items: center;
   background-color: #2d2d2d;
@@ -17,30 +16,40 @@
   position: relative;
 }
 
-.input-number::placeholder {
-  color: #666;
+.input-number.error {
+  background-color: #3c2d2b;
+  border: 2px solid #e74c3c;
+  box-shadow: inset 0 0 0 1px #7c3831;
 }
 
 .input-number-field {
+  flex: 1;
   text-align: start;
   background-color: #2f2f31;
   color: #ffffff;
   border: none;
   outline: none;
-  width: 100%;
   font-size: 14px;
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   padding: 0.5rem;
   -webkit-appearance: none;
   -moz-appearance: textfield;
   appearance: none;
 }
 
+.input-number-field::placeholder {
+  color: #666;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .input-number-buttons {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   right: 0.5rem;
   top: 50%;
@@ -48,6 +57,9 @@
 }
 
 .input-number-button {
+  background: none;
+  border: none;
+  padding: 0;
   cursor: pointer;
   width: 28px;
   height: 28px;
@@ -57,28 +69,13 @@
   transition: filter 0.2s ease;
 }
 
-.input-number-button:hover {
+.input-number-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.input-number-button:not(:disabled):hover {
   filter: brightness(1.2);
-}
-
-.input-number-button.up {
-  margin-bottom: -8px;
-}
-
-.input-number-button.down {
-  margin-top: -8px;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.input-number.error {
-  background-color: #3c2d2b;
-  border: 2px solid #e74c3c;
-  box-shadow: inset 0 0 0 1px #7c3831;
 }
 
 .error-message {
