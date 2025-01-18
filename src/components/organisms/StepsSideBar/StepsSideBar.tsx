@@ -1,4 +1,3 @@
-// StepsSidebar.tsx
 import React from 'react';
 import './stepsSidebar.css';
 import alertIcon from '../../../stories/assets/alert.svg';
@@ -22,6 +21,7 @@ export interface StepsSidebarProps {
   title?: string;
   steps: IStep[];
   errors: FieldErrors<FormData>;
+  onStepClick?: (stepNumber: number) => void;
 }
 
 const step1Fields: string[] = [
@@ -74,18 +74,18 @@ export const StepsSidebar: React.FC<StepsSidebarProps> = ({
   title = 'Create Event',
   steps,
   errors,
+  onStepClick,
 }) => {
   return (
     <div className="steps-sidebar-container">
       <div className="steps-sidebar-title">{title}</div>
       <ul className="steps-sidebar-list">
         {steps.map((step) => {
-          const isCompleted = step.status === 'completed';
           const isActive = step.status === 'active';
           const hasError = doesStepHaveErrors(step.stepNumber, errors);
 
           let circleContent;
-          if (isCompleted) {
+          if (step.status === 'completed' && !hasError) {
             circleContent = '✓';
           } else {
             circleContent = step.stepNumber.toString();
@@ -97,8 +97,9 @@ export const StepsSidebar: React.FC<StepsSidebarProps> = ({
               className={[
                 'steps-sidebar-item',
                 isActive ? 'steps-sidebar-item--active' : '',
-                isCompleted ? 'steps-sidebar-item--completed' : '',
+                step.status === 'completed' && !hasError ? 'steps-sidebar-item--completed' : '',
               ].join(' ')}
+              onClick={() => onStepClick && onStepClick(step.stepNumber)}
             >
               <div className="steps-sidebar-circle">{circleContent}</div>
               <span className="steps-sidebar-label">{step.label}</span>

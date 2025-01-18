@@ -28,6 +28,7 @@
   border-radius: 6px;
   padding: 8px;
   transition: border-color 0.2s ease;
+  cursor: pointer;
 }
 
 .steps-sidebar-circle {

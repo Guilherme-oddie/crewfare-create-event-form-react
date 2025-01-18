@@ -22,8 +22,6 @@ interface IStep {
 
 type FormData = BasicInformationType & DetailsFormType & DatesFormType;
 
-
-
 const EventForm: React.FC = () => {
   const methods = useForm<FormData>({
     mode: "onBlur",
@@ -67,11 +65,9 @@ const EventForm: React.FC = () => {
     },
   });
 
-
   const {
-    formState: { isDirty, errors },
+    formState: { errors },
     handleSubmit,
-    control,
   } = methods;
 
   const [steps, setSteps] = useState<IStep[]>([
@@ -83,7 +79,7 @@ const EventForm: React.FC = () => {
   const currentStep = steps.findIndex((step) => step.status === "active") + 1;
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
-    alert("Thank you for submitting your information! Your form data has been logged in the console—feel free to take a look anytime. I’d be thrilled to discuss opportunities with you.")
+    alert("Thank you for submitting your information!");
     console.log("Form Data:", data);
   };
 
@@ -116,8 +112,19 @@ const EventForm: React.FC = () => {
       );
     }
   };
-  const onInvalidSubmit: SubmitErrorHandler<FormData> = () => {
-    alert("Oops! It looks like you're missing a few required fields. Please fill them out before proceeding. A confirmation toast is coming soon!");
+
+  const handleStepClick = (stepNumber: number) => {
+    setSteps((prevSteps) =>
+      prevSteps.map((step) => ({
+        ...step,
+        status:
+          step.stepNumber === stepNumber
+            ? "active"
+            : step.stepNumber < stepNumber
+              ? "completed"
+              : "inactive",
+      }))
+    );
   };
 
   const renderStepContent = () => {
@@ -137,7 +144,7 @@ const EventForm: React.FC = () => {
     <FormProvider {...methods}>
       <HeaderComponent />
 
-      <form onSubmit={handleSubmit(onSubmit, onInvalidSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <Grid gap={0} total={12}>
           <Grid item size={1} style={{ backgroundColor: "#1d1d1f" }}>
             <div />
@@ -147,6 +154,7 @@ const EventForm: React.FC = () => {
               title="Create Event"
               steps={steps}
               errors={errors}
+              onStepClick={handleStepClick} // Passando o manipulador de clique
             />
           </Grid>
           <Grid item size={9} style={{ display: "flex", alignItems: "start", justifyContent: "start" }}>

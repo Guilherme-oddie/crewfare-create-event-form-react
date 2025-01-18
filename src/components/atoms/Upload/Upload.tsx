@@ -20,7 +20,7 @@ const Upload: React.FC<UploadComponentProps> = ({ overlayText }) => {
           name: file.name,
           type: file.type,
           size: file.size,
-          preview: fileURL, // Adiciona o preview como um campo temporário
+          preview: fileURL,
         },
         { shouldDirty: true }
       );

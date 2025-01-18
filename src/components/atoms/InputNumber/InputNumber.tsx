@@ -46,7 +46,6 @@ const InputNumber: React.FC<InputNumberProps> = ({
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
-    // Permite input vazio para que o usuário possa deletar e inserir um novo valor
     if (val === "") {
       setInputValue("");
       return;

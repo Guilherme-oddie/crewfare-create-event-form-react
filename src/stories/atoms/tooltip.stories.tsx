@@ -15,5 +15,5 @@ const Template: StoryFn<TooltipProps> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-    content: 'Lorem ipsum dolor sit amet consectetur. Urna ac duis a gravida.', // Adiciona o valor de `content`
+    content: 'Lorem ipsum dolor sit amet consectetur. Urna ac duis a gravida.',
 };
