@@ -36,3 +36,14 @@ npm run storybook
 Starts Storybook in development mode on port 6006.
 Open http://localhost:6006 to view your stories.
 
+
+## Screenshots
+
+![image](https://github.com/user-attachments/assets/e9fc0d39-9647-4a39-99a8-f865d6d8a920)
+
+![image](https://github.com/user-attachments/assets/9225bc7c-bfa7-4e6c-9d04-2f117e285d1b)
+
+![image](https://github.com/user-attachments/assets/e4a9ee09-b471-4f70-93d4-da7a6c34c53b)
+
+
+
