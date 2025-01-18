@@ -1,0 +1,26 @@
+.add-more-button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #4FF6B1;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.remove-button {
+    padding-top: 5px;
+}
+
+.remove-icon {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.add-icon {
+    margin-right: 5px;
+    margin-bottom: 4px;
+}

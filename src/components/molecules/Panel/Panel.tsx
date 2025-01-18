@@ -100,8 +100,10 @@ const Panel: React.FC<PanelProps> = ({
 }) => {
   const hasError = doesStepHaveErrors(currentStep, errors);
 
+  const styles = { background: '#1d1d1f', width: fullwidth ? "100%" : "" }
+
   return (
-    <div className="panel open" style={{ background: '#1d1d1f', width: fullwidth ? "100%" : "" }}>
+    <div className="panel open" style={styles}>
       <div className="panel-header">
         <div className="panel-title">
           {title}

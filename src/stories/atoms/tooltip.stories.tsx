@@ -8,7 +8,7 @@ export default {
 } as Meta;
 
 const Template: StoryFn<TooltipProps> = (args) => (
-    <div style={{ margin: '100px', textAlign: 'center' }}>
+    <div style={{ margin: '20px', textAlign: 'center' }}>
         <Tooltip {...args} />
     </div>
 );

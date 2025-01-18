@@ -7,6 +7,7 @@ import InputNumber from "../../atoms/InputNumber/InputNumber";
 import { Select } from "../../atoms/Select/Select";
 import removeIcon from '../../../stories/assets/remove-red.svg';
 import addButton from '../../../stories/assets/add-green.svg';
+import './taxFeeRange.css'
 
 export interface TaxFeeRangeType {
   taxesAndFees: {
@@ -86,52 +87,29 @@ const TaxFeeRange: React.FC = () => {
             <a
               type="button"
               onClick={() => remove(index)}
-              style={{
-                paddingTop: "40px",
-                display: "flex",
-                alignItems: "flex-start",
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                color: "#FF4F4F",
-                fontFamily: "Poppins",
-                fontSize: "14px",
-                fontWeight: "600",
-                lineHeight: "20px",
-                paddingBottom: "10px"
-              }}
+              className="remove-button-a"
             >
               <img
                 src={removeIcon}
                 alt="remove-button"
-                style={{ marginRight: "8px" }}
+                className="remove-icon"
               />
             </a>
           </Grid>
         </React.Fragment>
       ))}
 
-      <Grid item size={12}  style={{ flexDirection: "column", display: "flex" }}>
+      <Grid item size={12} style={{ flexDirection: "column", display: "flex" }}>
         <a
           type="button"
-          onClick={() => append({ name: "", amount: 0, type: "fixed" })}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            color: "#4FF6B1",
-            fontFamily: "Poppins",
-            fontSize: "14px",
-            fontWeight: "600",
-            lineHeight: "20px",
-          }}
+          onClick={() => append({ name: "", amount: 1, type: "fixed" })}
+          className='add-more-button'
         >
           <img
             src={addButton}
-            alt="add-button"
-            style={{ marginRight: "8px" }}
+            alt="add-icon"
+            className="add-icon"
+            
           />
           Add New Tax/Fee
         </a>

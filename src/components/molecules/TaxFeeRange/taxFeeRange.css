@@ -1,0 +1,12 @@
+.remove-button-a {
+    padding-top: 40px;
+    display: flex;
+    align-items: flex-start;
+    background: none;
+    border: none;
+}
+
+.remove-icon {
+    cursor: pointer;
+    margin-right: 8px;
+}

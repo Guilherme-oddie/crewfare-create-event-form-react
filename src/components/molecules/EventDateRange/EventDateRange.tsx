@@ -4,6 +4,7 @@ import Grid from "../../molecules/Grid/Grid";
 import InputDatePicker from "../../atoms/InputDatePicker/InputDatePicker";
 import addButton from '../../../stories/assets/add-green.svg';
 import removeIcon from '../../../stories/assets/remove-red.svg';
+import './eventDateRange.css';
 
 export interface EventDateRangeType {
   dateRanges: {
@@ -58,23 +59,12 @@ const EventDateRange: React.FC = () => {
               <a
                 type="button"
                 onClick={() => remove(index)}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  color: "#FF4F4F",
-                  fontFamily: "Poppins",
-                  fontSize: "14px",
-                  fontWeight: "600",
-                  lineHeight: "20px",
-                }}
+                className="remove-button"
               >
                 <img
                   src={removeIcon}
                   alt="remove-button"
-                  style={{ marginRight: "8px" }}
+                  className="remove-icon"
                 />
               </a>
             )}
@@ -85,25 +75,13 @@ const EventDateRange: React.FC = () => {
       <Grid item size={12} style={{ flexDirection: "row", alignItems: "center" }}>
         <a
           type="button"
-          className="add-more-button"
+          className='add-more-button'
           onClick={() => append({ startDate: "", endDate: "" })}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            color: "#4FF6B1",
-            fontFamily: "Poppins",
-            fontSize: "14px",
-            fontWeight: "600",
-            lineHeight: "20px",
-          }}
         >
           <img
             src={addButton}
             alt="add-button"
-            style={{ marginRight: "8px" }}
+            className="add-icon"
           />
           Add Event Date Range
         </a>
