@@ -1,39 +1,47 @@
-import React, { useState } from "react";
+import React from "react";
 import "./upload.css";
+import { useFormContext } from "react-hook-form";
 
-
-export interface UploadProps {
-  onFileUpload: (file: File) => void;
+export interface UploadComponentProps {
   overlayText?: string;
 }
 
-const Upload: React.FC<UploadProps> = ({ onFileUpload, overlayText }) => {
-  const [preview, setPreview] = useState<string | null>(null);
+const Upload: React.FC<UploadComponentProps> = ({ overlayText }) => {
+  const { watch, setValue } = useFormContext();
+  const upload = watch("upload");
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
       const file = event.target.files[0];
       const fileURL = URL.createObjectURL(file);
-      setPreview(fileURL);
-      onFileUpload(file);
+      setValue(
+        "upload",
+        {
+          name: file.name,
+          type: file.type,
+          size: file.size,
+          preview: fileURL, // Adiciona o preview como um campo temporário
+        },
+        { shouldDirty: true }
+      );
     }
   };
 
   const handleRemoveImage = () => {
-    setPreview(null);
+    setValue("upload", null, { shouldDirty: true });
   };
 
   return (
-    <div className={preview ? "upload-container no-border" : "upload-container"}>
+    <div className={upload?.preview ? "upload-container no-border" : "upload-container"}>
       <input
         type="file"
         id="file-upload"
         className="upload-input"
         onChange={handleFileChange}
       />
-      {preview ? (
+      {upload?.preview ? (
         <div className="upload-preview">
-          <img src={preview} alt="Preview" className="upload-image" />
+          <img src={upload.preview} alt="Preview" className="upload-image" />
           {overlayText && <span className="upload-overlay-text">{overlayText}</span>}
           <span className="upload-remove-button" onClick={handleRemoveImage}>
             ×

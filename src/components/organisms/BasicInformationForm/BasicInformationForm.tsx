@@ -26,10 +26,10 @@ export interface BasicInformationType {
 
 
 const BasicInformationForm: React.FC = () => {
-  const { control, watch, formState: { errors } } = useFormContext<BasicInformationType>();
+  const { control, watch, setValue, formState: { errors } } = useFormContext<BasicInformationType>();
   const overlayTextOnBanner = watch("overlayTextOnBanner");
 
-  return (
+  return (<>
     <Card padding="20px">
       <Grid gap={20} total={12}>
         <Grid item size={12} style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -87,11 +87,8 @@ const BasicInformationForm: React.FC = () => {
             control={control}
             render={({ field }) => (
               <Upload
-                {...field}
-                onFileUpload={(file) =>
-                  field.onChange({ name: file.name, type: file.type, size: file.size })
-                }
                 overlayText={watch("overlayText")}
+                {...field}
               />
             )}
           />
@@ -105,7 +102,10 @@ const BasicInformationForm: React.FC = () => {
               <Checkbox
                 label="Overlay Title on Banner"
                 checked={field.value}
-                onChange={(checked) => field.onChange(checked)}
+                onChange={(checked) => {
+                  field.onChange(checked)
+                  setValue('overlayText', "")
+                }}
               />
             )}
           />
@@ -131,6 +131,7 @@ const BasicInformationForm: React.FC = () => {
         )}
       </Grid>
     </Card>
+  </>
   );
 };
 

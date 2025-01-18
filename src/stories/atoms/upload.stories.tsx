@@ -1,17 +1,23 @@
-
 import React from "react";
 import { StoryFn, Meta } from "@storybook/react";
-import Upload, { UploadProps } from "../../components/atoms/Upload/Upload";
+import Upload from "../../components/atoms/Upload/Upload";
 
 export default {
   title: "Atom/Upload",
   component: Upload,
-} as Meta<UploadProps>;
+} as Meta;
 
-const Template: StoryFn<UploadProps> = (args) => <Upload {...args} />;
+const Template: StoryFn = (args) => <Upload {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  onFileUpload: (file: File) => alert(`File uploaded: ${file.name}`),
   overlayText: "Sample Text",
+  onFileUpload: (file: File) => {
+    const fileDetails = {
+      name: file.name,
+      type: file.type,
+      size: file.size,
+    };
+    alert(`File uploaded: ${JSON.stringify(fileDetails, null, 2)}`);
+  },
 };
