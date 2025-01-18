@@ -56,7 +56,7 @@ const EventForm: React.FC = () => {
       taxesAndFees: [
         {
           name: "",
-          amount: 0,
+          amount: 1,
           type: "fixed",
         },
       ],

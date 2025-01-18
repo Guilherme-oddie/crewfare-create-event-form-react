@@ -40,7 +40,7 @@ export const formDataValidationSchema = {
   link: yup
     .string()
     .url('Please enter a valid URL.')
-    .required('Please enter the link.'),
+    .required('Please enter the link. Example: https://www.google.com/'),
 
   eventAddress: yup
     .string()
@@ -85,9 +85,9 @@ export const formDataValidationSchema = {
           .required('Please enter the tax or fee name.'),
         amount: yup
           .number()
-          .typeError('Please enter a valid number for minimum nights.')
-          .min(1, 'Please enter at least 1 night.')
-          .required('Please specify the minimum nights.'),
+          .typeError('Please enter a valid number for the amount.')
+          .min(1, 'Please enter a value higher than 0.')
+          .required('Please specify the amount.'),
         type: yup
           .string()
           .required('Please enter the tax or fee type.'),
