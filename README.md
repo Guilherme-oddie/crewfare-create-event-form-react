@@ -12,7 +12,7 @@ npm or Yarn installed globally
 ### Installation
 
 Clone the repository:
-git clone https://github.com/OddieMaster/crewfare-create-event-form.git
+git clone https://github.com/Guilherme-oddie/crewfare-create-event-form-react
 
 ### Install the dependencies:
 
